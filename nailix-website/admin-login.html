@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Login - Nailix Nail & Spa</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #f5a3c6;
+            --secondary-color: #333333;
+            --light-color: #ffffff;
+            --dark-color: #000000;
+            --gray-color: #f5f5f5;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--gray-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .login-container {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .login-logo {
+            margin-bottom: 30px;
+        }
+        
+        .login-logo img {
+            max-width: 150px;
+            height: auto;
+        }
+        
+        .login-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+        }
+        
+        .login-form {
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(245, 163, 198, 0.3);
+        }
+        
+        .login-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .login-btn:hover {
+            background-color: #e07ba6;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            display: none;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .lock-message {
+            display: none;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .countdown {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-logo">
+            <h1 style="color: var(--primary-color);">Nailix Nail & Spa</h1>
+        </div>
+        
+        <h2 class="login-title">Admin Login</h2>
+        
+        <div class="lock-message" id="lockMessage">
+            <i class="fas fa-lock"></i> Account locked due to multiple failed attempts. 
+            <br>Please try again in <span class="countdown" id="countdown">15:00</span> minutes.
+        </div>
+        
+        <form class="login-form" id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" value="admin@nailix.com" readonly>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Login</button>
+            
+            <div class="error-message" id="errorMessage">
+                <i class="fas fa-exclamation-circle"></i> Incorrect password. Please try again.
+            </div>
+        </form>
+        
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Website
+        </a>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const errorMessage = document.getElementById('errorMessage');
+            const lockMessage = document.getElementById('lockMessage');
+            const countdownElement = document.getElementById('countdown');
+            const passwordInput = document.getElementById('password');
+            
+            // Check if account is locked
+            const checkLockStatus = () => {
+                const lockTime = localStorage.getItem('adminLockTime');
+                const attemptCount = parseInt(localStorage.getItem('adminAttemptCount') || '0');
+                
+                if (lockTime && attemptCount >= 5) {
+                    const lockUntil = parseInt(lockTime);
+                    const now = new Date().getTime();
+                    
+                    if (now < lockUntil) {
+                        // Account is still locked
+                        const remainingTime = Math.ceil((lockUntil - now) / 1000 / 60);
+                        const minutes = Math.floor(remainingTime);
+                        const seconds = Math.floor((remainingTime - minutes) * 60);
+                        
+                        countdownElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                        lockMessage.style.display = 'block';
+                        loginForm.style.display = 'none';
+                        
+                        // Start countdown
+                        const countdownInterval = setInterval(() => {
+                            const now = new Date().getTime();
+                            const remainingTime = Math.ceil((lockUntil - now) / 1000);
+                            
+                            if (remainingTime <= 0) {
+                                clearInterval(countdownInterval);
+                                lockMessage.style.display = 'none';
+                                loginForm.style.display = 'block';
+                                localStorage.removeItem('adminLockTime');
+                                localStorage.setItem('adminAttemptCount', '0');
+                            } else {
+                                const minutes = Math.floor(remainingTime / 60);
+                                const seconds = remainingTime % 60;
+                                countdownElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                            }
+                        }, 1000);
+                    } else {
+                        // Lock period has expired
+                        localStorage.removeItem('adminLockTime');
+                        localStorage.setItem('adminAttemptCount', '0');
+                    }
+                }
+            };
+            
+            // Check lock status on page load
+            checkLockStatus();
+            
+            // Handle login form submission
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const password = passwordInput.value;
+                const correctPassword = '1567IslipAve-Central-Islip-NY11722';
+                
+                if (password === correctPassword) {
+                    // Successful login
+                    errorMessage.style.display = 'none';
+                    localStorage.setItem('adminAttemptCount', '0');
+                    localStorage.setItem('adminSessionStart', new Date().getTime().toString());
+                    
+                    // Redirect to admin dashboard
+                    window.location.href = '/admin-dashboard';
+                } else {
+                    // Failed login attempt
+                    errorMessage.style.display = 'block';
+                    
+                    // Increment attempt counter
+                    const attemptCount = parseInt(localStorage.getItem('adminAttemptCount') || '0') + 1;
+                    localStorage.setItem('adminAttemptCount', attemptCount.toString());
+                    
+                    // Check if account should be locked
+                    if (attemptCount >= 5) {
+                        // Lock account for 15 minutes
+                        const lockUntil = new Date().getTime() + (15 * 60 * 1000);
+                        localStorage.setItem('adminLockTime', lockUntil.toString());
+                        
+                        // Show lock message
+                        checkLockStatus();
+                    }
+                }
+                
+                // Clear password field
+                passwordInput.value = '';
+            });
+        });
+    </script>
+</body>
+</html>

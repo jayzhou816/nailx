@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Nailix Nail & Spa</title>
+    <meta name="description" content="Learn about Nailix Nail & Spa in Central Islip, NY. Our story, mission, values, and the talented team behind our premium nail care services.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Additional styles specific to the About page */
+        .about-hero {
+            height: 400px;
+            background-image: url('https://source.unsplash.com/1600x900/?salon,team');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .about-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .about-section:nth-child(even) {
+            background-color: var(--gray-color);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .about-content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .value-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .team-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .team-role {
+            color: var(--primary-color);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .team-bio {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background-color: var(--primary-color);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-content {
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -40px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -40px;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 992px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -30px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .values-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Nailix Nail & Spa</a>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link" data-translate="home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="services.html" class="nav-link" data-translate="services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link" data-translate="contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link active" data-translate="about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="blog.html" class="nav-link" data-translate="blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="shop.html" class="nav-link" data-translate="shop">Shop</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="language-switcher">
+                        <button class="language-btn active" data-lang="en">EN</button>
+                        <button class="language-btn" data-lang="es">ES</button>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <p>1567 Islip Ave, Central Islip, NY 11722</p>
+                    <p>(646) 785-2246</p>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>About Nailix Nail & Spa</h1>
+            <p>Discover our story, mission, and the passionate team behind our premium nail care services</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://source.unsplash.com/800x600/?salon,interior" alt="Nailix Nail & Spa Interior">
+                </div>
+                <div class="about-content">
+                    <h3>From Passion to Excellence</h3>
+                    <p>Nailix Nail & Spa was founded in 2015 with a simple yet powerful vision: to elevate the nail care experience by combining technical expertise with genuine care for our clients' wellbeing.</p>
+                    <p>What began as a small salon with just three nail technicians has grown into a premier destination for nail care. Our growth has been driven by our commitment to excellence and the loyal support of our wonderful clients.</p>
+                    <p>Throughout our journey, we've remained true to our founding principles: using premium products, employing skilled technicians, and creating a welcoming environment where clients can relax and feel pampered.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission & Values Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="mission_values">Our Mission & Values</h2>
+            <p class="text-center" data-translate="mission_statement">At Nailix Nail & Spa, our mission is to provide exceptional nail care services that enhance both the appearance and health of our clients' nails, delivered in a clean, relaxing environment by skilled professionals who genuinely care.</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="value-title" data-translate="value_excellence">Excellence</h3>
+                    <p data-translate="value_excellence_desc">We strive for excellence in every service we provide, from the techniques we use to the products we select.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="value-title" data-translate="value_care">Care</h3>
+                    <p data-translate="value_care_desc">We genuinely care about our clients' wellbeing and prioritize nail health alongside beauty.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="value-title" data-translate="value_safety">Safety</h3>
+                    <p data-translate="value_safety_desc">We maintain the highest standards of cleanliness and safety in all our procedures and salon environment.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title" data-translate="value_innovation">Innovation</h3>
+                    <p data-translate="value_innovation_desc">We continuously learn and adopt new techniques and products to offer the best to our clients.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="value-title" data-translate="value_community">Community</h3>
+                    <p data-translate="value_community_desc">We value building relationships with our clients and being an active part of our local community.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="value-title" data-translate="value_sustainability">Sustainability</h3>
+                    <p data-translate="value_sustainability_desc">We're committed to environmentally responsible practices and using eco-friendly products when possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="our_team">Meet Our Team</h2>
+            <p class="text-center" data-translate="team_description">Our talented team of nail technicians brings years of experience, continuous education, and a passion for nail artistry to every service.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="https://source.unsplash.com/600x800/?woman,professional" alt="Lisa Chen">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Lisa Chen</h3>
+                        <p class="team-role" data-translate="role_founder">Founder & Master Technician</p>
+                        <p class="team-bio" data-translate="bio_lisa">With over 15 years of experience, Lisa's passion for nail artistry and client care led her to establish Nailix Nail & Spa.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="https://source.unsplash.com/600x800/?woman,smile" alt="Maria Rodriguez">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Maria Rodriguez</h3>
+                        <p class="team-role" data-translate="role_senior">Senior Nail Artist</p>
+                        <p class="team-bio" data-translate="bio_maria">Maria specializes in intricate nail art designs and has won several regional nail art competitions.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="https://source.unsplash.com/600x800/?man,professional" alt="David Kim">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">David Kim</h3>
+                        <p class="team-role" data-translate="role_specialist">Nail Extension Specialist</p>
+                        <p class="team-bio" data-translate="bio_david">David's expertise in gel and acrylic extensions has made him a favorite among clients seeking length and durability.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="https://source.unsplash.com/600x800/?woman,beauty" alt="Jennifer Patel">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Jennifer Patel</h3>
+                        <p class="team-role" data-translate="role_pedicure">Pedicure Specialist</p>
+                        <p class="team-bio" data-translate="bio_jennifer">Jennifer's therapeutic pedicure techniques provide both relaxation and rejuvenation for tired feet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Journey Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="our_journey">Our Journey</h2>
+            <p class="text-center" data-translate="journey_description">From our humble beginnings to where we are today, here are some key milestones in our journey.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018</div>
+                        <h3 class="timeline-title" data-translate="journey_beginning">The Beginning</h3>
+                        <p data-translate="journey_beginning_desc">Nailix Nail & Spa opened its doors in Central Islip with just three nail stations and a small team of dedicated technicians.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019</div>
+                        <h3 class="timeline-title" data-translate="journey_reputation">Growing Reputation</h3>
+                        <p data-translate="journey_reputation_desc">Within our first year, we gained recognition for our quality services and expanded our team to meet growing demand.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020</div>
+                        <h3 class="timeline-title" data-translate="journey_challenges">Adapting to Challenges</h3>
+                        <p data-translate="journey_challenges_desc">During the pandemic, we implemented enhanced safety protocols and introduced home nail care kits to support our clients.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021</div>
+                        <h3 class="timeline-title" data-translate="journey_expansion">Salon Expansion</h3>
+                        <p data-translate="journey_expansion_desc">We expanded our salon space to accommodate more clients and introduced new premium services.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h3 class="timeline-title" data-translate="journey_recognition">Community Recognition</h3>
+                        <p data-translate="journey_recognition_desc">Nailix was voted "Best Nail Salon" in the local community choice awards, a testament to our commitment to excellence.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3 class="timeline-title" data-translate="journey_sustainability">Sustainability Initiative</h3>
+                        <p data-translate="journey_sustainability_desc">We launched our sustainability initiative, transitioning to eco-friendly products and reducing waste in our operations.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h3 class="timeline-title" data-translate="journey_training">Advanced Training Program</h3>
+                        <p data-translate="journey_training_desc">We established our in-house training program to ensure all our technicians maintain the highest skill levels.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025</div>
+                        <h3 class="timeline-title" data-translate="journey_future">Looking Forward</h3>
+                        <p data-translate="journey_future_desc">As we continue to grow, we remain committed to our founding principles and to providing exceptional nail care experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Contact Information -->
+                <div class="footer-info">
+                    <h3 data-translate="contact_us">Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 1567 Islip Ave, Central Islip, NY 11722</p>
+                    <p><i class="fas fa-phone"></i> (646) 785-2246</p>
+                    <p><i class="fas fa-envelope"></i> info@nailixspa.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:30AM - 7:30PM</p>
+                    <p><i class="fas fa-clock"></i> Sun: 10:30AM - 6:30PM</p>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="footer-info">
+                    <h3 data-translate="follow_us">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="contact.html" class="social-link"><i class="fas fa-calendar-check"></i></a>
+                        <a href="tel:+16467852246" class="social-link"><i class="fas fa-phone"></i></a>
+                        <a href="/admin-login.html" class="social-link" title="Admin Login"><i class="fas fa-user-shield"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div class="footer-info">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343077!2d-73.1959894!3d40.7479888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e8354e9c6e0a5b%3A0x9ae0f1c45f4a3e13!2s1567%20Islip%20Ave%2C%20Central%20Islip%2C%20NY%2011722!5e0!3m2!1sen!2sus!4v1646432516789!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>
+                    <a href="privacy-policy.html" data-translate="privacy_policy">Privacy Policy</a> | 
+                    <a href="terms-of-service.html" data-translate="terms_of_service">Terms of Service</a>
+                </p>
+                <p data-translate="copyright">Copyright © 2025 Nailix Nail and Spa Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

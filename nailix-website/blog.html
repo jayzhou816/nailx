@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Nailix Nail & Spa</title>
+    <meta name="description" content="Explore nail care tips, trends, and insights on the Nailix Nail & Spa blog. Stay updated with the latest in nail health and beauty.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Additional styles specific to the Blog page */
+        .blog-hero {
+            height: 300px;
+            background-image: url('https://source.unsplash.com/1600x900/?nails,beauty');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .blog-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .blog-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .blog-section {
+            padding: 80px 0;
+        }
+        
+        .blog-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .blog-posts {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .blog-post {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .blog-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .blog-post:hover .blog-image img {
+            transform: scale(1.05);
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-date {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .blog-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .blog-excerpt {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #444;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .blog-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .blog-categories {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .blog-category {
+            background-color: #f5f5f5;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .read-more:hover {
+            color: #e07ba6;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .widget-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .search-form {
+            display: flex;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .search-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        
+        .category-list,
+        .recent-posts-list {
+            list-style: none;
+        }
+        
+        .category-item,
+        .recent-post-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .category-item:last-child,
+        .recent-post-item:last-child {
+            border-bottom: none;
+        }
+        
+        .category-link,
+        .recent-post-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .category-link:hover,
+        .recent-post-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .category-count {
+            background-color: #f5f5f5;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .recent-post-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .recent-post-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .recent-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .recent-post-info {
+            flex: 1;
+        }
+        
+        .recent-post-title {
+            font-weight: 500;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+        
+        .recent-post-date {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tag {
+            background-color: #f5f5f5;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .page-item {
+            margin: 0 5px;
+        }
+        
+        .page-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .page-link:hover,
+        .page-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        @media (max-width: 992px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                margin-top: 50px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Nailix Nail & Spa</a>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link" data-translate="home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="services.html" class="nav-link" data-translate="services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link" data-translate="contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link" data-translate="about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="blog.html" class="nav-link active" data-translate="blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="shop.html" class="nav-link" data-translate="shop">Shop</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="language-switcher">
+                        <button class="language-btn active" data-lang="en">EN</button>
+                        <button class="language-btn" data-lang="es">ES</button>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <p>1567 Islip Ave, Central Islip, NY 11722</p>
+                    <p>(646) 785-2246</p>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="blog-hero-content">
+            <h1>Nail Care Insights & Trends</h1>
+            <p>Explore our blog for tips, inspiration, and the latest in nail care</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-container">
+                <!-- Blog Posts -->
+                <div class="blog-posts">
+                    <!-- Blog Post 1 -->
+                    <article class="blog-post">
+                        <div class="blog-image">
+                            <img src="https://source.unsplash.com/800x600/?nails,gel" alt="The Ultimate Guide to Gel Nails">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">March 1, 2025</div>
+                            <h2 class="blog-title">The Ultimate Guide to Gel Nails: Benefits, Application, and Maintenance</h2>
+                            <p class="blog-excerpt">Gel nails have revolutionized the manicure industry, offering long-lasting, chip-resistant results that maintain their shine for weeks. In this comprehensive guide, we explore everything you need to know about gel nails, from the application process to proper maintenance techniques...</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-image">
+                                        <img src="https://source.unsplash.com/100x100/?woman,portrait" alt="Lisa Chen">
+                                    </div>
+                                    <span>By Lisa Chen</span>
+                                </div>
+                                <div class="blog-categories">
+                                    <span class="blog-category">Nail Care</span>
+                                    <span class="blog-category">Gel Nails</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Blog Post 2 -->
+                    <article class="blog-post">
+                        <div class="blog-image">
+                            <img src="https://source.unsplash.com/800x600/?nails,art" alt="Nail Art Trends for Spring 2025">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">February 15, 2025</div>
+                            <h2 class="blog-title">Nail Art Trends for Spring 2025: Colors, Designs, and Inspiration</h2>
+                            <p class="blog-excerpt">As we welcome the spring season, it's time to refresh your nail look with the latest trends. This spring, we're seeing a beautiful blend of pastel hues, minimalist designs, and unexpected textures dominating the nail art scene. From delicate floral patterns to bold geometric shapes...</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-image">
+                                        <img src="https://source.unsplash.com/100x100/?woman,smile" alt="Maria Rodriguez">
+                                    </div>
+                                    <span>By Maria Rodriguez</span>
+                                </div>
+                                <div class="blog-categories">
+                                    <span class="blog-category">Nail Art</span>
+                                    <span class="blog-category">Trends</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Blog Post 3 -->
+                    <article class="blog-post">
+                        <div class="blog-image">
+                            <img src="https://source.unsplash.com/800x600/?hands,moisturizer" alt="5 Essential Tips for Healthy Cuticles">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">January 28, 2025</div>
+                            <h2 class="blog-title">5 Essential Tips for Healthy Cuticles Year-Round</h2>
+                            <p class="blog-excerpt">Cuticles play a crucial role in nail health, acting as a protective barrier against bacteria and infection. Yet, they're often overlooked in nail care routines. Proper cuticle care not only enhances the appearance of your manicure but also promotes stronger, healthier nails...</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-image">
+                                        <img src="https://source.unsplash.com/100x100/?man,professional" alt="David Kim">
+                                    </div>
+                                    <span>By David Kim</span>
+                                </div>
+                                <div class="blog-categories">
+                                    <span class="blog-category">Nail Health</span>
+                                    <span class="blog-category">Cuticle Care</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Blog Post 4 -->
+                    <article class="blog-post">
+                        <div class="blog-image">
+                            <img src="https://source.unsplash.com/800x600/?pedicure,spa" alt="The Perfect At-Home Pedicure">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">January 10, 2025</div>
+                            <h2 class="blog-title">The Perfect At-Home Pedicure: A Step-by-Step Guide</h2>
+                            <p class="blog-excerpt">While professional pedicures are a wonderful treat, maintaining beautiful feet between salon visits is essential. With the right tools and techniques, you can enjoy a spa-quality pedicure in the comfort of your own home. Our step-by-step guide walks you through creating the perfect at-home pedicure...</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-image">
+                                        <img src="https://source.unsplash.com/100x100/?woman,beauty" alt="Jennifer Patel">
+                                    </div>
+                                    <span>By Jennifer Patel</span>
+                                </div>
+                                <div class="blog-categories">
+                                    <span class="blog-category">Pedicure</span>
+                                    <span class="blog-category">DIY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="page-link active">1</a>
+                        <a href="#" class="page-link">2</a>
+                        <a href="#" class="page-link">3</a>
+                        <a href="#" class="page-link"><i class="fas fa-angle-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Search Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Search</h3>
+                        <form class="search-form">
+                            <input type="text" class="search-input" placeholder="Search...">
+                            <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Categories</h3>
+                        <ul class="category-list">
+                            <li class="category-item">
+                                <a href="#" class="category-link">
+                                    <span>Nail Care</span>
+                                    <span class="category-count">12</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-link">
+                                    <span>Nail Art</span>
+                                    <span class="category-count">8</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-link">
+                                    <span>Gel Nails</span>
+                                    <span class="category-count">6</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-link">
+                                    <span>Pedicure</span>
+                                    <span class="category-count">5</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-link">
+                                    <span>Nail Health</span>
+                                    <span class="category-count">4</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-link">
+                                    <span>Trends</span>
+                                    <span class="category-count">7</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Recent Posts Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Recent Posts</h3>
+                        <ul class="recent-posts-list">
+                            <li class="recent-post-item">
+                                <div class="recent-post-image">
+                                    <img src="https://source.unsplash.com/100x100/?nails,gel" alt="The Ultimate Guide to Gel Nails">
+                                </div>
+                                <div class="recent-post-info">
+                                    <h4 class="recent-post-title">The Ultimate Guide to Gel Nails</h4>
+                                    <div class="recent-post-date">March 1, 2025</div>
+                                </div>
+                            </li>
+                            <li class="recent-post-item">
+                                <div class="recent-post-image">
+                                    <img src="https://source.unsplash.com/100x100/?nails,art" alt="Nail Art Trends for Spring 2025">
+                                </div>
+                                <div class="recent-post-info">
+                                    <h4 class="recent-post-title">Nail Art Trends for Spring 2025</h4>
+                                    <div class="recent-post-date">February 15, 2025</div>
+                                </div>
+                            </li>
+                            <li class="recent-post-item">
+                                <div class="recent-post-image">
+                                    <img src="https://source.unsplash.com/100x100/?hands,moisturizer" alt="5 Essential Tips for Healthy Cuticles">
+                                </div>
+                                <div class="recent-post-info">
+                                    <h4 class="recent-post-title">5 Essential Tips for Healthy Cuticles</h4>
+                                    <div class="recent-post-date">January 28, 2025</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tags Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Tags</h3>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag">Nail Care</a>
+                            <a href="#" class="tag">Gel Nails</a>
+                            <a href="#" class="tag">Nail Art</a>
+                            <a href="#" class="tag">Pedicure</a>
+                            <a href="#" class="tag">Manicure</a>
+                            <a href="#" class="tag">Nail Health</a>
+                            <a href="#" class="tag">DIY</a>
+                            <a href="#" class="tag">Trends</a>
+                            <a href="#" class="tag">Cuticle Care</a>
+                            <a href="#" class="tag">Polish</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Contact Information -->
+                <div class="footer-info">
+                    <h3 data-translate="contact_us">Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 1567 Islip Ave, Central Islip, NY 11722</p>
+                    <p><i class="fas fa-phone"></i> (646) 785-2246</p>
+                    <p><i class="fas fa-envelope"></i> info@nailixspa.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:30AM - 7:30PM, Sun: 10:30AM - 6:30PM</p>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="footer-info">
+                    <h3 data-translate="follow_us">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="contact.html" class="social-link"><i class="fas fa-calendar-check"></i></a>
+                        <a href="tel:+16467852246" class="social-link"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div class="footer-info">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343077!2d-73.1959894!3d40.7479888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e8354e9c6e0a5b%3A0x9ae0f1c45f4a3e13!2s1567%20Islip%20Ave%2C%20Central%20Islip%2C%20NY%2011722!5e0!3m2!1sen!2sus!4v1646432516789!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>
+                    <a href="privacy-policy.html" data-translate="privacy_policy">Privacy Policy</a> | 
+                    <a href="terms-of-service.html" data-translate="terms_of_service">Terms of Service</a>
+                </p>
+                <p data-translate="copyright">Copyright © 2025 Nailix Nail and Spa Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

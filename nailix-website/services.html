@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Nailix Nail & Spa</title>
+    <meta name="description" content="Explore our premium nail care services including gel manicures, nail extensions, and pedicures at Nailix Nail & Spa in Central Islip, NY.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Additional styles specific to the Services page */
+        .services-hero {
+            height: 400px;
+            background-image: url('https://source.unsplash.com/1600x900/?nail,salon');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .services-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .services-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .service-category {
+            padding: 80px 0;
+        }
+        
+        .service-category:nth-child(even) {
+            background-color: var(--gray-color);
+        }
+        
+        .service-list {
+            margin-top: 40px;
+        }
+        
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .service-name {
+            font-weight: 600;
+        }
+        
+        .service-price {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .service-description {
+            margin-top: 5px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .service-note {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 3px solid var(--primary-color);
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .service-item {
+                flex-direction: column;
+            }
+            
+            .service-price {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Nailix Nail & Spa</a>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link" data-translate="home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="services.html" class="nav-link active" data-translate="services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link" data-translate="contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link" data-translate="about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="blog.html" class="nav-link" data-translate="blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="shop.html" class="nav-link" data-translate="shop">Shop</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="language-switcher">
+                        <button class="language-btn active" data-lang="en">EN</button>
+                        <button class="language-btn" data-lang="es">ES</button>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <p>1567 Islip Ave, Central Islip, NY 11722</p>
+                    <p>(646) 785-2246</p>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="services-hero-content">
+            <h1>Our Premium Services</h1>
+            <p>Experience the ultimate in nail care with our range of professional services</p>
+        </div>
+    </section>
+
+    <!-- Manicure Services -->
+    <section class="service-category">
+        <div class="container">
+            <h2 class="section-title">Manicure Services</h2>
+            <p>Our manicure services are designed to enhance the natural beauty of your nails while promoting nail health. We use premium products and techniques to ensure long-lasting results.</p>
+            
+            <div class="service-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Signature Gel Manicure</div>
+                        <div class="service-description">Our signature service includes nail shaping, cuticle care, hydrating hand massage, and gel polish application.</div>
+                    </div>
+                    <div class="service-price">$40</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Express Gel Manicure</div>
+                        <div class="service-description">A quick refresh for your nails with essential care and gel polish application.</div>
+                    </div>
+                    <div class="service-price">$30</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Luxury Spa Manicure</div>
+                        <div class="service-description">Indulge in our premium treatment with exfoliation, paraffin treatment, extended massage, and gel polish.</div>
+                    </div>
+                    <div class="service-price">$60</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Classic Polish Manicure</div>
+                        <div class="service-description">Traditional manicure with regular nail polish instead of gel.</div>
+                    </div>
+                    <div class="service-price">$30</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Nail Art (per nail)</div>
+                        <div class="service-description">Custom nail art designs from simple to elaborate.</div>
+                    </div>
+                    <div class="service-price">$5-15</div>
+                </div>
+            </div>
+            
+            <div class="service-note">
+                <p>All gel manicures include removal of previous gel polish if needed. Please mention this when booking your appointment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nail Extensions -->
+    <section class="service-category">
+        <div class="container">
+            <h2 class="section-title">Nail Extensions</h2>
+            <p>Add length and strength to your natural nails with our premium extension services. Our technicians are skilled in creating natural-looking, durable extensions.</p>
+            
+            <div class="service-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Gel Nail Extensions</div>
+                        <div class="service-description">Lightweight, natural-looking extensions using premium gel products.</div>
+                    </div>
+                    <div class="service-price">$65</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Gel Extension Fill</div>
+                        <div class="service-description">Maintenance for existing gel extensions (2-3 weeks).</div>
+                    </div>
+                    <div class="service-price">$45</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Acrylic Full Set</div>
+                        <div class="service-description">Durable acrylic extensions with your choice of polish.</div>
+                    </div>
+                    <div class="service-price">$60</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Acrylic Fill</div>
+                        <div class="service-description">Maintenance for existing acrylic extensions (2-3 weeks).</div>
+                    </div>
+                    <div class="service-price">$40</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Extension Removal</div>
+                        <div class="service-description">Safe removal of gel or acrylic extensions with nail conditioning treatment.</div>
+                    </div>
+                    <div class="service-price">$25</div>
+                </div>
+            </div>
+            
+            <div class="service-note">
+                <p>Extension services include basic nail art at no additional charge. Premium designs available for an additional fee.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pedicure Services -->
+    <section class="service-category">
+        <div class="container">
+            <h2 class="section-title">Pedicure Services</h2>
+            <p>Treat your feet to our luxurious pedicure services. Each pedicure includes a relaxing foot soak, exfoliation, nail care, and massage.</p>
+            
+            <div class="service-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Signature Gel Pedicure</div>
+                        <div class="service-description">Our signature pedicure includes callus removal, extended massage, and gel polish application.</div>
+                    </div>
+                    <div class="service-price">$55</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Express Gel Pedicure</div>
+                        <div class="service-description">Essential foot and nail care with gel polish application.</div>
+                    </div>
+                    <div class="service-price">$45</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Luxury Spa Pedicure</div>
+                        <div class="service-description">Premium treatment with aromatherapy soak, deluxe exfoliation, paraffin treatment, extended massage, and gel polish.</div>
+                    </div>
+                    <div class="service-price">$75</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Classic Polish Pedicure</div>
+                        <div class="service-description">Traditional pedicure with regular nail polish instead of gel.</div>
+                    </div>
+                    <div class="service-price">$40</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Foot Massage (15 min)</div>
+                        <div class="service-description">Relaxing foot massage to relieve tension and improve circulation.</div>
+                    </div>
+                    <div class="service-price">$20</div>
+                </div>
+            </div>
+            
+            <div class="service-note">
+                <p>Pedicure services include basic nail art at no additional charge. Premium designs available for an additional fee.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combo Packages -->
+    <section class="service-category">
+        <div class="container">
+            <h2 class="section-title">Combo Packages</h2>
+            <p>Save with our popular service combinations. Perfect for a complete nail care experience or to share with a friend.</p>
+            
+            <div class="service-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Signature Mani-Pedi Combo</div>
+                        <div class="service-description">Our signature gel manicure and pedicure services combined.</div>
+                    </div>
+                    <div class="service-price">$90</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Express Mani-Pedi Combo</div>
+                        <div class="service-description">Express gel manicure and pedicure for those on the go.</div>
+                    </div>
+                    <div class="service-price">$75</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Luxury Spa Package</div>
+                        <div class="service-description">Luxury spa manicure and pedicure with complimentary glass of champagne.</div>
+                    </div>
+                    <div class="service-price">$125</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Mother-Daughter Special</div>
+                        <div class="service-description">Two signature gel manicures to enjoy together.</div>
+                    </div>
+                    <div class="service-price">$80</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <div class="service-name">Bridal Package</div>
+                        <div class="service-description">Luxury manicure and pedicure with premium nail art for your special day.</div>
+                    </div>
+                    <div class="service-price">$150</div>
+                </div>
+            </div>
+            
+            <div class="service-note">
+                <p>Group bookings available for parties of 3 or more. Please call to inquire about our special group rates and party packages.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Info -->
+    <section class="service-category">
+        <div class="container">
+            <h2 class="section-title">Booking Information</h2>
+            <p>To ensure the best experience, please review our booking policies:</p>
+            
+            <ul style="margin-top: 20px; margin-left: 20px; list-style-type: disc;">
+                <li>Appointments are recommended to ensure availability.</li>
+                <li>Please arrive 10 minutes before your scheduled appointment time.</li>
+                <li>A 24-hour cancellation notice is required to avoid a cancellation fee.</li>
+                <li>Late arrivals may result in shortened service time to accommodate subsequent appointments.</li>
+                <li>Please inform us of any health concerns or allergies prior to your service.</li>
+            </ul>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="tel:+16467852246" class="btn">Call to Book: (646) 785-2246</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Contact Information -->
+                <div class="footer-info">
+                    <h3 data-translate="contact_us">Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 1567 Islip Ave, Central Islip, NY 11722</p>
+                    <p><i class="fas fa-phone"></i> (646) 785-2246</p>
+                    <p><i class="fas fa-envelope"></i> info@nailixspa.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:30AM - 7:30PM</p>
+                    <p><i class="fas fa-clock"></i> Sun: 10:30AM - 6:30PM</p>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="footer-info">
+                    <h3 data-translate="follow_us">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="contact.html" class="social-link"><i class="fas fa-calendar-check"></i></a>
+                        <a href="tel:+16467852246" class="social-link"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div class="footer-info">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343077!2d-73.1959894!3d40.7479888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e8354e9c6e0a5b%3A0x9ae0f1c45f4a3e13!2s1567%20Islip%20Ave%2C%20Central%20Islip%2C%20NY%2011722!5e0!3m2!1sen!2sus!4v1646432516789!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>
+                    <a href="privacy-policy.html" data-translate="privacy_policy">Privacy Policy</a> | 
+                    <a href="terms-of-service.html" data-translate="terms_of_service">Terms of Service</a>
+                </p>
+                <p data-translate="copyright">Copyright © 2025 Nailix Nail and Spa Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

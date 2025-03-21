@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More About Nailix Nail Care - Nailix Nail & Spa</title>
+    <meta name="description" content="Learn more about Nailix nail care services, benefits, safety information, and frequently asked questions.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Additional styles specific to the Learn More page */
+        .learn-more-hero {
+            height: 400px;
+            background-image: url('https://source.unsplash.com/1600x900/?nails,manicure,salon');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .learn-more-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .learn-more-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .learn-more-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .learn-more-section {
+            padding: 80px 0;
+        }
+        
+        .learn-more-section:nth-child(even) {
+            background-color: var(--gray-color);
+        }
+        
+        .section-divider {
+            height: 2px;
+            background-color: var(--primary-color);
+            width: 100px;
+            margin: 40px auto;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .learn-more-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Nailix Nail & Spa</a>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link" data-translate="home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="services.html" class="nav-link" data-translate="services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link" data-translate="contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link" data-translate="about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="blog.html" class="nav-link" data-translate="blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="shop.html" class="nav-link" data-translate="shop">Shop</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="language-switcher">
+                        <button class="language-btn active" data-lang="en">EN</button>
+                        <button class="language-btn" data-lang="es">ES</button>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <p>1567 Islip Ave, Central Islip, NY 11722</p>
+                    <p>(646) 785-2246</p>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="learn-more-hero">
+        <div class="learn-more-hero-content">
+            <h1>Discover the Nailix Difference</h1>
+            <p>Premium nail care services designed for health, beauty, and lasting results</p>
+        </div>
+    </section>
+
+    <!-- What is Nailix Section -->
+    <section class="learn-more-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="what_is_nailix">What is Nailix Nail Care?</h2>
+            <div class="content">
+                <p>Nailix nail care is a precise nail treatment technique that uses specialized tools to provide exceptional nail care. Our approach focuses on hydration to promote nail health and slow down cuticle regeneration, resulting in longer-lasting manicures and healthier nails.</p>
+                <p>Unlike traditional manicures that often involve harsh chemicals and aggressive techniques, Nailix nail care is gentle yet effective, addressing the root causes of common nail issues while enhancing the natural beauty of your nails.</p>
+                <p>Our trained technicians use premium products and follow meticulous protocols to ensure each client receives the highest quality care and stunning results that last longer than conventional treatments.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="learn-more-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="benefits">Benefits</h2>
+            <div class="content">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">Improved Nail Health</div>
+                        <div class="accordion-content">
+                            <p>Nailix treatments focus on nail health first and foremost. By properly hydrating the nail plate and surrounding skin, we help strengthen weak or damaged nails, reduce brittleness, and promote natural growth. Our techniques and products work together to create an optimal environment for nail health.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">Precise Cuticle Care</div>
+                        <div class="accordion-content">
+                            <p>Our specialized approach to cuticle care is what sets Nailix apart. Rather than cutting cuticles (which can lead to infection and faster regrowth), we gently push back and condition the cuticles, slowing regeneration and creating a cleaner nail bed for polish application. This results in a more professional finish that lasts longer.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">Long-Lasting Results</div>
+                        <div class="accordion-content">
+                            <p>Nailix manicures and pedicures typically last 2-3 weeks longer than traditional services. By properly preparing the nail surface and using high-quality gel products, we ensure your polish adheres better and resists chipping. The slower cuticle regeneration also means your manicure maintains its fresh, just-done appearance for longer.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">Enhanced Appearance</div>
+                        <div class="accordion-content">
+                            <p>Beyond health benefits, Nailix treatments simply look better. Our attention to detail and precise application techniques result in flawless, salon-quality finishes. Whether you choose a natural look or elaborate nail art, your nails will have a professional polish that draws compliments and boosts confidence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section class="learn-more-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="safety">Safety</h2>
+            <div class="content">
+                <p>At Nailix Nail & Spa, your safety is our top priority. Our nail care services are performed by highly trained technicians in a clean, reputable salon environment. We follow strict sanitation protocols and use only premium, safe products.</p>
+                <p>For optimal safety and results, we recommend choosing professional technicians for your nail care needs. Our staff undergoes continuous education to stay updated on the latest techniques and safety standards in the industry.</p>
+                <p>All our tools are properly sterilized between clients, and we use disposable items whenever possible to prevent cross-contamination. Our salon maintains high standards of cleanliness throughout all areas, ensuring a safe and comfortable experience for every client.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="learn-more-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="faq">Frequently Asked Questions</h2>
+            <div class="content">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">How often should I schedule Nailix treatments?</div>
+                        <div class="accordion-content">
+                            <p>For manicures, we recommend scheduling appointments every 2-3 weeks to maintain optimal results. For pedicures, every 2-3 weeks is typically sufficient. However, this can vary based on your individual nail growth rate and lifestyle factors. Our technicians can provide personalized recommendations during your visit.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">What gel colors and designs are available?</div>
+                        <div class="accordion-content">
+                            <p>We offer a wide range of gel colors from leading brands, including seasonal collections and classic shades. Our nail artists can create various designs from simple French tips to elaborate nail art. Feel free to bring inspiration photos or discuss your ideas with our technicians during your appointment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">Are Nailix treatments suitable for weak or damaged nails?</div>
+                        <div class="accordion-content">
+                            <p>Yes! In fact, Nailix treatments are especially beneficial for weak or damaged nails. Our gentle approach and focus on hydration help strengthen nails over time. We can customize treatments based on your nail condition, and our technicians may recommend specific strengthening products or treatments to address your concerns.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">How can I maintain my nails between appointments?</div>
+                        <div class="accordion-content">
+                            <p>To extend the life of your Nailix treatment, we recommend regular moisturizing with cuticle oil and hand cream. Wear gloves when doing dishes or using cleaning products, and avoid using your nails as tools. For gel manicures, avoid picking or peeling the polish, as this can damage your natural nails. If you notice any lifting or chipping, schedule a quick repair rather than attempting to fix it yourself.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="learn-more-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="testimonials">Testimonials</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"I've been getting my nails done for years, but Nailix treatments are on another level. The attention to detail is impeccable, and my manicure lasts nearly a month without chipping!"</p>
+                    <p class="testimonial-author">- Sarah M.</p>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"My nails were always brittle and breaking until I started coming to Nailix. After just a few months of regular treatments, my natural nails are stronger and healthier than ever."</p>
+                    <p class="testimonial-author">- Jennifer L.</p>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"The nail artists here are true professionals. They listen to what I want and always deliver perfect results. I won't trust my nails to anyone else!"</p>
+                    <p class="testimonial-author">- Michael T.</p>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"I love how my cuticles stay neat for weeks after a Nailix manicure. The hydration techniques they use have completely transformed my nail care routine."</p>
+                    <p class="testimonial-author">- Rebecca D.</p>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"As someone who works with my hands, I need durable nail treatments. Nailix delivers beautiful results that stand up to my active lifestyle."</p>
+                    <p class="testimonial-author">- David K.</p>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"The salon is immaculately clean, and the staff is so friendly and professional. I always feel pampered and well-cared for during my appointments."</p>
+                    <p class="testimonial-author">- Lisa R.</p>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"I've received more compliments on my nails since switching to Nailix than ever before. The colors stay vibrant, and the shine is incredible!"</p>
+                    <p class="testimonial-author">- Emma S.</p>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"After years of nail salon disappointments, I finally found Nailix. The difference in quality and longevity is remarkable. I'm a customer for life!"</p>
+                    <p class="testimonial-author">- Thomas B.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Contact Information -->
+                <div class="footer-info">
+                    <h3 data-translate="contact_us">Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 1567 Islip Ave, Central Islip, NY 11722</p>
+                    <p><i class="fas fa-phone"></i> (646) 785-2246</p>
+                    <p><i class="fas fa-envelope"></i> info@nailixspa.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:30AM - 7:30PM</p>
+                    <p><i class="fas fa-clock"></i> Sun: 10:30AM - 6:30PM</p>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="footer-info">
+                    <h3 data-translate="follow_us">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="contact.html" class="social-link"><i class="fas fa-calendar-check"></i></a>
+                        <a href="tel:+16467852246" class="social-link"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div class="footer-info">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343077!2d-73.1959894!3d40.7479888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e8354e9c6e0a5b%3A0x9ae0f1c45f4a3e13!2s1567%20Islip%20Ave%2C%20Central%20Islip%2C%20NY%2011722!5e0!3m2!1sen!2sus!4v1646432516789!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>
+                    <a href="privacy-policy.html" data-translate="privacy_policy">Privacy Policy</a> | 
+                    <a href="terms-of-service.html" data-translate="terms_of_service">Terms of Service</a>
+                </p>
+                <p data-translate="copyright">Copyright © 2025 Nailix Nail and Spa Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

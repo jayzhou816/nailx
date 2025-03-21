@@ -1,0 +1,78 @@
+<i class="fas fa-trash-alt mr-1"></i>Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Operation Logs Tab -->
+        <div id="logs-tab" class="tab-content">
+            <div class="bg-white shadow-md rounded-md p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-semibold">Operation Logs</h2>
+                    
+                    <div class="flex space-x-2">
+                        <button id="clearLogsBtn" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm transition duration-300">
+                            <i class="fas fa-trash-alt mr-1"></i>Clear Logs
+                        </button>
+                        <button id="exportLogsBtn" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-md text-sm transition duration-300">
+                            <i class="fas fa-file-export mr-1"></i>Export Logs
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="logs-list space-y-2">
+                    <!-- Log entries will be dynamically added here -->
+                    
+                    <!-- Example Log Entry -->
+                    <div class="log-entry p-4 mb-2 bg-white rounded-md shadow-sm">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-800">User logged in</p>
+                                <p class="text-sm text-gray-500">By admin@nailix.com</p>
+                            </div>
+                            <span class="text-xs text-gray-400">March 19, 2025, 5:30:00 PM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="log-entry p-4 mb-2 bg-white rounded-md shadow-sm">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-800">Uploaded 3 images</p>
+                                <p class="text-sm text-gray-500">By admin@nailix.com</p>
+                            </div>
+                            <span class="text-xs text-gray-400">March 19, 2025, 5:35:12 PM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="log-entry p-4 mb-2 bg-white rounded-md shadow-sm">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-800">Published article: The Ultimate Guide to Gel Nails</p>
+                                <p class="text-sm text-gray-500">By admin@nailix.com</p>
+                            </div>
+                            <span class="text-xs text-gray-400">March 19, 2025, 5:42:45 PM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="flex justify-center mt-6">
+                    <nav class="flex space-x-1">
+                        <a href="#" class="px-3 py-1 rounded-md bg-primary text-white">1</a>
+                        <a href="#" class="px-3 py-1 rounded-md hover:bg-gray-200">2</a>
+                        <a href="#" class="px-3 py-1 rounded-md hover:bg-gray-200">3</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- JavaScript -->
+    <script src="js/admin.js"></script>
+</body>
+</html>
