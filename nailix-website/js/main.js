@@ -156,10 +156,6 @@ const translations = {
         'en': 'Blog',
         'es': 'Blog'
     },
-    'shop': {
-        'en': 'Shop',
-        'es': 'Tienda'
-    },
     
     // Hero Section
     'hero_title': {
